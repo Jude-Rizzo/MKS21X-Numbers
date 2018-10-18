@@ -75,8 +75,17 @@ public class RationalNumber extends RealNumber
   *reduced after construction.
   */
   private void reduce(){
+    if (nume == 0){
+      deno = 1;
+    } else {
+    if (deno == 0){
+      nume = 0;
+      deno = 1;
+    } else {
     nume = nume/(gcd(nume, deno));
     deno = deno/gcd(nume, deno);
+    }
+   }
   }
 
 
